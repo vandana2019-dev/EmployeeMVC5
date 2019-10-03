@@ -1,0 +1,22 @@
+﻿@model IEnumerable<EmployeeMVC5.Models.Department>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>List of Departments</h2>
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Departments</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var department in Model)
+        {
+            <tr>
+                <td>@department.Name</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
