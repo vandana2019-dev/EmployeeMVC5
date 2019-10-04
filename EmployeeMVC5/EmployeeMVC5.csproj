@@ -178,6 +178,10 @@
     <Compile Include="Migrations\201910042323085_AddIsSubscribedToEmployee.Designer.cs">
       <DependentUpon>201910042323085_AddIsSubscribedToEmployee.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201910042329220_AddEmployeeType.cs" />
+    <Compile Include="Migrations\201910042329220_AddEmployeeType.Designer.cs">
+      <DependentUpon>201910042329220_AddEmployeeType.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Department.cs" />
     <Compile Include="Models\Employee.cs" />
@@ -187,6 +191,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\EmployeeType.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -275,6 +280,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201910042323085_AddIsSubscribedToEmployee.resx">
       <DependentUpon>201910042323085_AddIsSubscribedToEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910042329220_AddEmployeeType.resx">
+      <DependentUpon>201910042329220_AddEmployeeType.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
