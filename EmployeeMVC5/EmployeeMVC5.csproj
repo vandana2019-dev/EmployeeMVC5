@@ -186,6 +186,10 @@
     <Compile Include="Migrations\201910042338149_AddTypeToEmployeeType.Designer.cs">
       <DependentUpon>201910042338149_AddTypeToEmployeeType.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201910042339464_PopulateEmployeeTypes.cs" />
+    <Compile Include="Migrations\201910042339464_PopulateEmployeeTypes.Designer.cs">
+      <DependentUpon>201910042339464_PopulateEmployeeTypes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Department.cs" />
     <Compile Include="Models\Employee.cs" />
@@ -290,6 +294,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201910042338149_AddTypeToEmployeeType.resx">
       <DependentUpon>201910042338149_AddTypeToEmployeeType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910042339464_PopulateEmployeeTypes.resx">
+      <DependentUpon>201910042339464_PopulateEmployeeTypes.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
