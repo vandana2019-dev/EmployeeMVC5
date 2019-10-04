@@ -8,6 +8,7 @@ namespace EmployeeMVC5.Models
     public class EmployeeType
     {
         public byte Id { get; set; }
+        public string Type { get; set; }
         public byte DurationInMonths { get; set; }
     }
 }
