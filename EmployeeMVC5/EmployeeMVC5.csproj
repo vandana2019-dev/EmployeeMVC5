@@ -174,6 +174,10 @@
     <Compile Include="Migrations\201910042304113_InitialModel.Designer.cs">
       <DependentUpon>201910042304113_InitialModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201910042323085_AddIsSubscribedToEmployee.cs" />
+    <Compile Include="Migrations\201910042323085_AddIsSubscribedToEmployee.Designer.cs">
+      <DependentUpon>201910042323085_AddIsSubscribedToEmployee.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Department.cs" />
     <Compile Include="Models\Employee.cs" />
@@ -268,6 +272,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201910042304113_InitialModel.resx">
       <DependentUpon>201910042304113_InitialModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910042323085_AddIsSubscribedToEmployee.resx">
+      <DependentUpon>201910042323085_AddIsSubscribedToEmployee.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

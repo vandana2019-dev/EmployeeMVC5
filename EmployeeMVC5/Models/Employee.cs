@@ -18,5 +18,7 @@ namespace EmployeeMVC5.Models
         {
             get { return FirstName + " " + LastName; }
         }
+
+        public bool IsSubscribedToNewsLetter { get; set; }
     }
 }
