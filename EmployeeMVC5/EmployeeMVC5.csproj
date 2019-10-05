@@ -194,6 +194,10 @@
     <Compile Include="Migrations\201910042353058_ApplyAnnotationsToCustomerName.Designer.cs">
       <DependentUpon>201910042353058_ApplyAnnotationsToCustomerName.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201910050041069_ApplyAnnotationsToEmployeeType.cs" />
+    <Compile Include="Migrations\201910050041069_ApplyAnnotationsToEmployeeType.Designer.cs">
+      <DependentUpon>201910050041069_ApplyAnnotationsToEmployeeType.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Department.cs" />
     <Compile Include="Models\Employee.cs" />
@@ -304,6 +308,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201910042353058_ApplyAnnotationsToCustomerName.resx">
       <DependentUpon>201910042353058_ApplyAnnotationsToCustomerName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910050041069_ApplyAnnotationsToEmployeeType.resx">
+      <DependentUpon>201910050041069_ApplyAnnotationsToEmployeeType.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
