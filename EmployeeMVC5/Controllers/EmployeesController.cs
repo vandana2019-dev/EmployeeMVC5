@@ -42,6 +42,17 @@ namespace EmployeeMVC5.Controllers
         [HttpPost]
         public ActionResult Save(Employee employee)
         {
+            if(!ModelState.IsValid)
+            {
+                var viewModel = new EmployeeFormViewModel
+                {
+                    Employee = employee,
+                    EmploymentTypes = _context.EmploymentTypes.ToList()
+                };
+                return View("EmployeeForm", viewModel);
+                
+            }
+
             if(employee.Id == 0)
                _context.Employees.Add(employee);
 

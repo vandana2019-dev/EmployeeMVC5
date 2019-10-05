@@ -13,14 +13,17 @@
     <div class="form-group">
         @Html.LabelFor(m => m.Employee.FirstName)
         @Html.TextBoxFor(m => m.Employee.FirstName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Employee.FirstName)
     </div>
     <div class="form-group">
         @Html.LabelFor(m => m.Employee.LastName)
         @Html.TextBoxFor(m => m.Employee.LastName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Employee.LastName)
     </div>
     <div class="form-group">
         @Html.LabelFor(m => m.Employee.EmploymentTypeId)
         @Html.DropDownListFor(m => m.Employee.EmploymentTypeId, new SelectList(Model.EmploymentTypes, "Id", "Name"), "Select Employment Type", new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Employee.EmploymentTypeId)
     </div>
     <div class="checkbox">
         <label>

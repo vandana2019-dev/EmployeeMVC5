@@ -11,7 +11,7 @@ namespace EmployeeMVC5.Models
     {
         public int Id { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Please enter Employee's First Name")]
         [StringLength(255)]
         [DisplayName("First Name")]
         public string FirstName { get; set; }
