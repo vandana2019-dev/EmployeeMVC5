@@ -46,6 +46,10 @@ namespace EmployeeMVC5.Controllers
 
         public ActionResult New()
         {
+            var viewModel = new DepartmentFormViewModel
+            {
+                Department = new Department()
+            };
             return View("DepartmentForm");
         }
 
