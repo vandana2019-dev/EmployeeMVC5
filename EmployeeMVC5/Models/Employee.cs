@@ -31,7 +31,7 @@ namespace EmployeeMVC5.Models
 
         public EmploymentType EmploymentType { get; set; }
 
-        [DisplayName("Employee Type")]
+        [DisplayName("Employment Type")]
         public byte EmploymentTypeId { get; set; }
     }
 }

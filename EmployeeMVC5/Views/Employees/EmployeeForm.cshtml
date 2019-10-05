@@ -19,8 +19,8 @@
         @Html.TextBoxFor(m => m.Employee.LastName, new { @class = "form-control" })
     </div>
     <div class="form-group">
-        @Html.LabelFor(m => m.Employee.EmployeeTypeId)
-        @Html.DropDownListFor(m => m.Employee.EmployeeTypeId, new SelectList(Model.EmployeeTypes, "Id", "Type"), "Select Employee Type", new { @class = "form-control" })
+        @Html.LabelFor(m => m.Employee.EmploymentTypeId)
+        @Html.DropDownListFor(m => m.Employee.EmploymentTypeId, new SelectList(Model.EmploymentTypes, "Id", "Name"), "Select Employment Type", new { @class = "form-control" })
     </div>
     <div class="checkbox">
         <label>

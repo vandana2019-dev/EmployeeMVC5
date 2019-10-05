@@ -35,7 +35,7 @@ namespace EmployeeMVC5.Controllers
             var employeeTypes = _context.EmploymentTypes.ToList();
             var viewModel = new EmployeeFormViewModel
             {
-                EmployeeTypes = employeeTypes
+                EmploymentTypes = employeeTypes
             };
             return View("EmployeeForm", viewModel);
         }
@@ -70,7 +70,7 @@ namespace EmployeeMVC5.Controllers
             var viewModel = new EmployeeFormViewModel
             {
                 Employee = employee,
-                EmployeeTypes = _context.EmploymentTypes.ToList()
+                EmploymentTypes = _context.EmploymentTypes.ToList()
             };
             return View("EmployeeForm", viewModel);
         }
