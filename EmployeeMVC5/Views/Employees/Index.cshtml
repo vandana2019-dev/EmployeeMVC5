@@ -22,7 +22,7 @@ else
             {
                 <tr>
                     <td>@Html.ActionLink(employee.FullName, "Edit", "Employees", new { id = employee.Id }, null)</td>
-                    <td>@employee.EmployeeType.Type</td>
+                    <td>@employee.EmploymentType.Name</td>
                 </tr>
             }
         </tbody>

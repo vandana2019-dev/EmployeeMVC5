@@ -25,14 +25,14 @@ namespace EmployeeMVC5.Controllers
         // GET: Employees
         public ActionResult Index()
         {
-            var employee = _context.Employees.Include( e => e.EmployeeType).ToList();
+            var employee = _context.Employees.Include( e => e.EmploymentType).ToList();
 
             return View(employee);
         }
 
         public ActionResult New()
         {
-            var employeeTypes = _context.EmployeeTypes.ToList();
+            var employeeTypes = _context.EmploymentTypes.ToList();
             var viewModel = new EmployeeFormViewModel
             {
                 EmployeeTypes = employeeTypes
@@ -51,7 +51,7 @@ namespace EmployeeMVC5.Controllers
 
                 employeeInDb.FirstName = employee.FirstName;
                 employeeInDb.LastName = employee.LastName;
-                employeeInDb.EmployeeTypeId = employee.EmployeeTypeId;
+                employeeInDb.EmploymentTypeId = employee.EmploymentTypeId;
                 employeeInDb.IsSubscribedToNewsLetter = employee.IsSubscribedToNewsLetter;
 
             }
@@ -70,14 +70,14 @@ namespace EmployeeMVC5.Controllers
             var viewModel = new EmployeeFormViewModel
             {
                 Employee = employee,
-                EmployeeTypes = _context.EmployeeTypes.ToList()
+                EmployeeTypes = _context.EmploymentTypes.ToList()
             };
             return View("EmployeeForm", viewModel);
         }
 
         public ActionResult Details(int id)
         {
-            var employee = _context.Employees.Include(e => e.EmployeeType).SingleOrDefault(c => c.Id == id);
+            var employee = _context.Employees.Include(e => e.EmploymentType).SingleOrDefault(c => c.Id == id);
 
             if (employee == null)
                 return HttpNotFound();

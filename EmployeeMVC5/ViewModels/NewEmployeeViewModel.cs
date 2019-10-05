@@ -8,7 +8,7 @@ namespace EmployeeMVC5.ViewModels
 {
     public class EmployeeFormViewModel
     {
-        public IEnumerable<EmployeeType> EmployeeTypes { get; set; } 
+        public IEnumerable<EmploymentType> EmployeeTypes { get; set; } 
         public Employee Employee { get; set; }
 
     }

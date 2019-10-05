@@ -198,6 +198,22 @@
     <Compile Include="Migrations\201910050041069_ApplyAnnotationsToEmployeeType.Designer.cs">
       <DependentUpon>201910050041069_ApplyAnnotationsToEmployeeType.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201910050322272_RenameEmployeeTypesToEmploymentTypes.cs" />
+    <Compile Include="Migrations\201910050322272_RenameEmployeeTypesToEmploymentTypes.Designer.cs">
+      <DependentUpon>201910050322272_RenameEmployeeTypesToEmploymentTypes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910050339469_RenameTypeToNameInEmploymentType.cs" />
+    <Compile Include="Migrations\201910050339469_RenameTypeToNameInEmploymentType.Designer.cs">
+      <DependentUpon>201910050339469_RenameTypeToNameInEmploymentType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910050341389_DeleteDataFromEmploymentType.cs" />
+    <Compile Include="Migrations\201910050341389_DeleteDataFromEmploymentType.Designer.cs">
+      <DependentUpon>201910050341389_DeleteDataFromEmploymentType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910050347528_RePopulateEmploymentTypes.cs" />
+    <Compile Include="Migrations\201910050347528_RePopulateEmploymentTypes.Designer.cs">
+      <DependentUpon>201910050347528_RePopulateEmploymentTypes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Department.cs" />
     <Compile Include="Models\Employee.cs" />
@@ -207,7 +223,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\EmployeeType.cs" />
+    <Compile Include="Models\EmploymentType.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -313,6 +329,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201910050041069_ApplyAnnotationsToEmployeeType.resx">
       <DependentUpon>201910050041069_ApplyAnnotationsToEmployeeType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910050322272_RenameEmployeeTypesToEmploymentTypes.resx">
+      <DependentUpon>201910050322272_RenameEmployeeTypesToEmploymentTypes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910050339469_RenameTypeToNameInEmploymentType.resx">
+      <DependentUpon>201910050339469_RenameTypeToNameInEmploymentType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910050341389_DeleteDataFromEmploymentType.resx">
+      <DependentUpon>201910050341389_DeleteDataFromEmploymentType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910050347528_RePopulateEmploymentTypes.resx">
+      <DependentUpon>201910050347528_RePopulateEmploymentTypes.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

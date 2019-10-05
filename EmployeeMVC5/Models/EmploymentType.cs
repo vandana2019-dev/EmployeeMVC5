@@ -6,12 +6,12 @@ using System.Web;
 
 namespace EmployeeMVC5.Models
 {
-    public class EmployeeType
+    public class EmploymentType
     {
         public byte Id { get; set; }
 
         [Required]
-        public string Type { get; set; }
+        public string Name { get; set; }
         public byte DurationInMonths { get; set; }
     }
 }
