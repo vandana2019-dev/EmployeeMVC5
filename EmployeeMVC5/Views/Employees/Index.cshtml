@@ -44,12 +44,16 @@ else
 
         $(document).ready(function () {
             $("#customers .js-delete").on("click", function () {
+
+                var button = $(this);
+
                 if (confirm("Are you sure you want to delete this employee?")) {
                     $.ajax({
-                        url: "/api/employees/" + $(this).attr("data-employee-id"),
+                        url: "/api/employees/" + button.attr("data-employee-id"),
                         method: "DELETE",
                         success: function () {
                             console.log("Success");
+                            button.parents("tr").remove();
                         }
                     });
                 }
