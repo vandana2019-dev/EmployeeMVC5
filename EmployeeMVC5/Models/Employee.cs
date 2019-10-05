@@ -30,6 +30,8 @@ namespace EmployeeMVC5.Models
         public bool IsSubscribedToNewsLetter { get; set; }
 
         public EmployeeType EmployeeType { get; set; }
+
+        [DisplayName("Employee Type")]
         public byte EmployeeTypeId { get; set; }
     }
 }

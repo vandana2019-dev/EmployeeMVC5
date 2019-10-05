@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Data.Entity;
+using EmployeeMVC5.ViewModels;
 
 namespace EmployeeMVC5.Controllers
 {
@@ -31,7 +32,12 @@ namespace EmployeeMVC5.Controllers
 
         public ActionResult New()
         {
-            return View();
+            var employeeTypes = _context.EmployeeTypes.ToList();
+            var viewModel = new NewEmployeeViewModel
+            {
+                EmployeeTypes = employeeTypes
+            };
+            return View(viewModel);
         }
         
         public ActionResult Details(int id)

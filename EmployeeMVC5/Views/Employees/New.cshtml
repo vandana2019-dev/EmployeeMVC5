@@ -1,28 +1,31 @@
-﻿@model EmployeeMVC5.Models.Employee
+﻿@model EmployeeMVC5.ViewModels.NewEmployeeViewModel
+
 @{
-    /**/
 
     ViewBag.Title = "New";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>New Customer</h2>
+<h2>New Employee</h2>
 
-@using (Html.BeginForm("Create", "Customers"))
+@using (Html.BeginForm("Create", "Employee"))
 {
     <div class="form-group">
-        @Html.LabelFor(m => m.FirstName)
-        @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control" })
+        @Html.LabelFor(m => m.Employee.FirstName)
+        @Html.TextBoxFor(m => m.Employee.FirstName, new { @class = "form-control" })
     </div>
     <div class="form-group">
-        @Html.LabelFor(m => m.LastName)
-        @Html.TextBoxFor(m => m.LastName, new { @class = "form-control" })
+        @Html.LabelFor(m => m.Employee.LastName)
+        @Html.TextBoxFor(m => m.Employee.LastName, new { @class = "form-control" })
     </div>
     <div class="checkbox">
         <label>
-            @Html.CheckBoxFor(m => m.IsSubscribedToNewsLetter) Subscribed to Newsletter ?
+            @Html.CheckBoxFor(m => m.Employee.IsSubscribedToNewsLetter) Subscribed to Newsletter ?
         </label>
     </div>
-
+    <div class="form-group">
+        @Html.LabelFor(m => m.Employee.EmployeeTypeId)
+        @Html.DropDownListFor(m => m.Employee.EmployeeTypeId, new SelectList(Model.EmployeeTypes, "Id", "Type"), "Select Employee Type",new { @class = "form-control" })
+    </div>
 }
 
