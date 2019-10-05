@@ -31,7 +31,7 @@ namespace EmployeeMVC5.Controllers
 
         public ActionResult Details(int id)
         {
-            var employee = _context.Employees.SingleOrDefault(c => c.Id == id);
+            var employee = _context.Employees.Include(e => e.EmployeeType).SingleOrDefault(c => c.Id == id);
 
             if (employee == null)
                 return HttpNotFound();
