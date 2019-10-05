@@ -25,22 +25,22 @@ namespace EmployeeMVC5.Controllers.Api
         }
 
         // GET /api/employees/1
-        public EmployeeDto GetEmployee(int id)
+        public IHttpActionResult GetEmployee(int id)
         {
             var employee = _context.Employees.SingleOrDefault(c => c.Id == id);
 
             if (employee == null)
-                throw new HttpResponseException(HttpStatusCode.NotFound);
+                return NotFound();
 
-            return Mapper.Map<Employee, EmployeeDto>(employee);
+            return Ok(Mapper.Map<Employee, EmployeeDto>(employee));
         }
 
         // POST /api/employees
         [HttpPost]
-        public EmployeeDto CreateEmployee(EmployeeDto employeeDto)
+        public IHttpActionResult CreateEmployee(EmployeeDto employeeDto)
         {
             if (!ModelState.IsValid)
-                throw new HttpResponseException(HttpStatusCode.BadRequest);
+                return BadRequest();
 
             var employee = Mapper.Map<EmployeeDto, Employee>(employeeDto);
             _context.Employees.Add(employee);
@@ -48,7 +48,7 @@ namespace EmployeeMVC5.Controllers.Api
 
             employeeDto.Id = employee.Id;
 
-            return employeeDto;
+            return Created(new Uri(Request.RequestUri + "/" + employee.Id), employeeDto);
         }
 
         // PUT /api/employees/1
