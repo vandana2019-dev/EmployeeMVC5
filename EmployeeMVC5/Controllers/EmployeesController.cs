@@ -39,6 +39,14 @@ namespace EmployeeMVC5.Controllers
             };
             return View(viewModel);
         }
+        [HttpPost]
+        public ActionResult Create(Employee employee)
+        {
+            _context.Employees.Add(employee);
+            _context.SaveChanges();
+
+            return RedirectToAction("Index", "Employees");
+        }
         
         public ActionResult Details(int id)
         {
