@@ -5,6 +5,8 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using EmployeeMVC5.Models;
+using EmployeeMVC5.Dtos;
+using AutoMapper;
 
 namespace EmployeeMVC5.Controllers.Api
 {
@@ -16,39 +18,42 @@ namespace EmployeeMVC5.Controllers.Api
         {
             _context = new ApplicationDbContext();
         }
-        // GET /api/customers
-        public IEnumerable<Employee> GetEmployees()
+        // GET /api/employee
+        public IEnumerable<EmployeeDto> GetEmployees()
         {
-            return _context.Employees.ToList();
+            return _context.Employees.ToList().Select(Mapper.Map<Employee, EmployeeDto>);
         }
 
-        // GET /api/customers/1
-        public Employee GetEmployee(int id)
+        // GET /api/employees/1
+        public EmployeeDto GetEmployee(int id)
         {
             var employee = _context.Employees.SingleOrDefault(c => c.Id == id);
 
             if (employee == null)
                 throw new HttpResponseException(HttpStatusCode.NotFound);
 
-            return employee;
+            return Mapper.Map<Employee, EmployeeDto>(employee);
         }
 
-        // POST /api/customers
+        // POST /api/employees
         [HttpPost]
-        public Employee CreateEmployee(Employee employee)
+        public EmployeeDto CreateEmployee(EmployeeDto employeeDto)
         {
             if (!ModelState.IsValid)
                 throw new HttpResponseException(HttpStatusCode.BadRequest);
 
+            var employee = Mapper.Map<EmployeeDto, Employee>(employeeDto);
             _context.Employees.Add(employee);
             _context.SaveChanges();
 
-            return employee;
+            employeeDto.Id = employee.Id;
+
+            return employeeDto;
         }
 
         // PUT /api/employees/1
         [HttpPut]
-        public void UpdateCustomer(int id, Employee employee)
+        public void UpdateCustomer(int id, EmployeeDto employeeDto)
         {
             if (!ModelState.IsValid)
                 throw new HttpResponseException(HttpStatusCode.BadRequest);
@@ -58,15 +63,13 @@ namespace EmployeeMVC5.Controllers.Api
             if (employeeInDb == null)
                 throw new HttpResponseException(HttpStatusCode.NotFound);
 
-            employeeInDb.FirstName = employee.FirstName;
-            employeeInDb.LastName = employee.LastName;
-            employeeInDb.IsSubscribedToNewsLetter = employee.IsSubscribedToNewsLetter;
-            employeeInDb.EmploymentTypeId = employee.EmploymentTypeId;
+            Mapper.Map(employeeDto, employeeInDb);
+           
 
             _context.SaveChanges();
         }
 
-        // DELETE /api/customers/1
+        // DELETE /api/employee/1
         [HttpDelete]
         public void DeleteCustomer(int id)
         {
