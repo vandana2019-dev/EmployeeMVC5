@@ -4,6 +4,10 @@
 }
 
 <h2>List of Employees</h2>
+<p>
+    @Html.ActionLink("New Employee", "New", "Employees", null, new { @class = "btn btn-primary" })
+</p>
+
 @if(!Model.Any())
 {
     <p>We don't have any employees yet</p>
