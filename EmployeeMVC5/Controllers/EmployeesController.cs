@@ -35,6 +35,7 @@ namespace EmployeeMVC5.Controllers
             var employeeTypes = _context.EmploymentTypes.ToList();
             var viewModel = new EmployeeFormViewModel
             {
+                Employee = new Employee(),
                 EmploymentTypes = employeeTypes
             };
             return View("EmployeeForm", viewModel);
