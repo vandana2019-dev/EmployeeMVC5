@@ -13,10 +13,12 @@ namespace EmployeeMVC5.Models
 
         [Required]
         [StringLength(255)]
+        [DisplayName("First Name")]
         public string FirstName { get; set; }
 
         [Required]
         [StringLength(255)]
+        [DisplayName("Last Name")]
         public string LastName { get; set; }
 
         [DisplayName("Full Name")]

@@ -29,6 +29,11 @@ namespace EmployeeMVC5.Controllers
             return View(employee);
         }
 
+        public ActionResult New()
+        {
+            return View();
+        }
+        
         public ActionResult Details(int id)
         {
             var employee = _context.Employees.Include(e => e.EmployeeType).SingleOrDefault(c => c.Id == id);
