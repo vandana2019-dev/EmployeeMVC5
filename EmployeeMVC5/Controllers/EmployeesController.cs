@@ -40,9 +40,21 @@ namespace EmployeeMVC5.Controllers
             return View("EmployeeForm", viewModel);
         }
         [HttpPost]
-        public ActionResult Create(Employee employee)
+        public ActionResult Save(Employee employee)
         {
-            _context.Employees.Add(employee);
+            if(employee.Id == 0)
+               _context.Employees.Add(employee);
+
+            else
+            {
+                var employeeInDb = _context.Employees.Single(e => e.Id == employee.Id);
+
+                employeeInDb.FirstName = employee.FirstName;
+                employeeInDb.LastName = employee.LastName;
+                employeeInDb.EmployeeTypeId = employee.EmployeeTypeId;
+                employeeInDb.IsSubscribedToNewsLetter = employee.IsSubscribedToNewsLetter;
+
+            }
             _context.SaveChanges();
 
             return RedirectToAction("Index", "Employees");
