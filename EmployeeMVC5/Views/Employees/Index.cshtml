@@ -14,6 +14,7 @@ else
         <thead>
             <tr>
                 <th>Employee</th>
+                <th>Employee Type</th>
             </tr>
         </thead>
         <tbody>
@@ -21,6 +22,7 @@ else
             {
                 <tr>
                     <td>@Html.ActionLink(employee.FullName, "Details", "Employees", new { id = employee.Id }, null)</td>
+                    <td>@employee.EmployeeType.Type</td>
                 </tr>
             }
         </tbody>
