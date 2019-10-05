@@ -214,6 +214,10 @@
     <Compile Include="Migrations\201910050347528_RePopulateEmploymentTypes.Designer.cs">
       <DependentUpon>201910050347528_RePopulateEmploymentTypes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201910050714136_AddAnnotationsToDepartment.cs" />
+    <Compile Include="Migrations\201910050714136_AddAnnotationsToDepartment.Designer.cs">
+      <DependentUpon>201910050714136_AddAnnotationsToDepartment.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Department.cs" />
     <Compile Include="Models\Employee.cs" />
@@ -343,6 +347,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201910050347528_RePopulateEmploymentTypes.resx">
       <DependentUpon>201910050347528_RePopulateEmploymentTypes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910050714136_AddAnnotationsToDepartment.resx">
+      <DependentUpon>201910050714136_AddAnnotationsToDepartment.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

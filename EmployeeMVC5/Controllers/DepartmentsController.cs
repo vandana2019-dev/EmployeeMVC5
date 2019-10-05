@@ -53,8 +53,17 @@ namespace EmployeeMVC5.Controllers
         [HttpPost]
         public ActionResult Save(Department department)
         {
-            // Adding New Department
-            if (department.Id == 0)
+            if (!ModelState.IsValid)
+            {
+                var viewModel = new DepartmentFormViewModel
+                {
+                    Department = department,
+                  
+                };
+                return View("DepartmentForm", viewModel);
+            }
+                // Adding New Department
+                if (department.Id == 0)
                 _context.Departments.Add(department);
 
             // Modifying an existing department

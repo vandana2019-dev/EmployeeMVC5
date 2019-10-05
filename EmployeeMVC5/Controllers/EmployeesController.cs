@@ -54,9 +54,11 @@ namespace EmployeeMVC5.Controllers
                 
             }
 
+            // Adding new Employee
             if(employee.Id == 0)
                _context.Employees.Add(employee);
 
+            // Modifying an existing employee
             else
             {
                 var employeeInDb = _context.Employees.Single(e => e.Id == employee.Id);
