@@ -47,16 +47,20 @@ else
 
                 var button = $(this);
 
-                if (confirm("Are you sure you want to delete this employee?")) {
-                    $.ajax({
-                        url: "/api/employees/" + button.attr("data-employee-id"),
-                        method: "DELETE",
-                        success: function () {
-                            console.log("Success");
-                            button.parents("tr").remove();
-                        }
-                    });
-                }
+                bootbox.confirm("Are you sure you want to Delete this employee?", function (result) {
+                    if (result) {
+                        $.ajax({
+                            url: "/api/employees/" + button.attr("data-employee-id"),
+                            method: "DELETE",
+                            success: function () {
+                                console.log("Success");
+                                button.parents("tr").remove();
+                            }
+                        });
+                    }
+                });
+
+                
             });
         });
     </script>    
