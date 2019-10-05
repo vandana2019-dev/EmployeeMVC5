@@ -14,7 +14,7 @@
 }
 else
 {
-    <table id="customers" class="table table-bordered table-hover">
+    <table id="employees" class="table table-bordered table-hover">
         <thead>
             <tr>
                 <th>Employee Full Name</th>
@@ -43,7 +43,8 @@ else
     <script>
 
         $(document).ready(function () {
-            $("#customers .js-delete").on("click", function () {
+
+            $("#employees").on("click", ".js-delete", function () {
 
                 var button = $(this);
 
