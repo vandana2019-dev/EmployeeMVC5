@@ -33,11 +33,11 @@ namespace EmployeeMVC5.Controllers
         public ActionResult New()
         {
             var employeeTypes = _context.EmployeeTypes.ToList();
-            var viewModel = new NewEmployeeViewModel
+            var viewModel = new EmployeeFormViewModel
             {
                 EmployeeTypes = employeeTypes
             };
-            return View(viewModel);
+            return View("EmployeeForm", viewModel);
         }
         [HttpPost]
         public ActionResult Create(Employee employee)
@@ -48,6 +48,21 @@ namespace EmployeeMVC5.Controllers
             return RedirectToAction("Index", "Employees");
         }
         
+        public ActionResult Edit(int id)
+        {
+            var employee = _context.Employees.SingleOrDefault(e => e.Id == id);
+
+            if (employee == null)
+                return HttpNotFound();
+
+            var viewModel = new EmployeeFormViewModel
+            {
+                Employee = employee,
+                EmployeeTypes = _context.EmployeeTypes.ToList()
+            };
+            return View("EmployeeForm", viewModel);
+        }
+
         public ActionResult Details(int id)
         {
             var employee = _context.Employees.Include(e => e.EmployeeType).SingleOrDefault(c => c.Id == id);
