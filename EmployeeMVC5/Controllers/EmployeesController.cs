@@ -26,9 +26,7 @@ namespace EmployeeMVC5.Controllers
         // GET: Employees
         public ActionResult Index()
         {
-            var employee = _context.Employees.Include( e => e.EmploymentType).ToList();
-
-            return View(employee);
+            return View();
         }
 
         public ActionResult New()
