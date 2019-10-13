@@ -7,6 +7,7 @@ using System.Web.Http;
 using EmployeeMVC5.Models;
 using EmployeeMVC5.Dtos;
 using AutoMapper;
+using System.Data.Entity;
 
 namespace EmployeeMVC5.Controllers.Api
 {
@@ -19,9 +20,15 @@ namespace EmployeeMVC5.Controllers.Api
             _context = new ApplicationDbContext();
         }
         // GET /api/employee
-        public IEnumerable<EmployeeDto> GetEmployees()
+        public IHttpActionResult GetEmployees()
         {
-            return _context.Employees.ToList().Select(Mapper.Map<Employee, EmployeeDto>);
+           
+            var employeeDtos = _context.Employees
+                .Include(em => em.EmploymentType)
+                .ToList()
+                .Select(Mapper.Map<Employee, EmployeeDto>);
+
+            return Ok(employeeDtos);
         }
 
         // GET /api/employees/1

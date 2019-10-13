@@ -34,19 +34,24 @@
                 },
                 columns: [
                     {
-                        data: "name",
+                        data: "fullName",
+                        // custom rendering function
+                        // 1st parameter value of the property - which is the data above (employee full name)
+                        // 2nd parameter is the type for this column
+                        // 3rd parameter is the actual object or row we are rendering (here we calling it as employee)
                         render: function (data, type, employee) {
-                            return "<a href= '/employees/edit/" + employee.id + "'>" + "</a>";
-
+                            return "<a href= '/employees/edit/" + employee.id + "'>" + employee.fullName + "</a>";
+                               // navigate to edit view and pass id as parameter       text to displayed is full name
                         }
                     },
                     {
-                        data: "name"
+                        data: "employmentType.name"
                     },
                     {
                         data: "id",
                         render: function (data) {
                             return "<button class= 'btn-link js-delete' data-employee-id =" + data + ">Delete</button>";
+                            // add a button having classes as shown                         here data refers to id
                         }
                     }
                 ]

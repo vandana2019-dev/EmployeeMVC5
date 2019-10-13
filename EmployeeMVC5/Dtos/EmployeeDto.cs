@@ -27,7 +27,8 @@ namespace EmployeeMVC5.Dtos
 
         public bool IsSubscribedToNewsLetter { get; set; }
 
-       
+        public EmploymentTypeDto EmploymentType { get; set; }
+
         public byte EmploymentTypeId { get; set; }
     }
 }

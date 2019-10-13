@@ -186,6 +186,7 @@
     <Compile Include="Controllers\DepartmentsController.cs" />
     <Compile Include="Controllers\EmployeesController.cs" />
     <Compile Include="Dtos\EmployeeDto.cs" />
+    <Compile Include="Dtos\EmploymentTypeDto.cs" />
     <Compile Include="Migrations\201910042304113_InitialModel.cs" />
     <Compile Include="Migrations\201910042304113_InitialModel.Designer.cs">
       <DependentUpon>201910042304113_InitialModel.cs</DependentUpon>
