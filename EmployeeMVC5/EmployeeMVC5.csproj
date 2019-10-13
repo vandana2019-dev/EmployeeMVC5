@@ -235,6 +235,10 @@
     <Compile Include="Migrations\201910050714136_AddAnnotationsToDepartment.Designer.cs">
       <DependentUpon>201910050714136_AddAnnotationsToDepartment.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201910130409449_SeedUsers.cs" />
+    <Compile Include="Migrations\201910130409449_SeedUsers.Designer.cs">
+      <DependentUpon>201910130409449_SeedUsers.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Department.cs" />
     <Compile Include="Models\Employee.cs" />
@@ -542,6 +546,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201910050714136_AddAnnotationsToDepartment.resx">
       <DependentUpon>201910050714136_AddAnnotationsToDepartment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910130409449_SeedUsers.resx">
+      <DependentUpon>201910130409449_SeedUsers.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
