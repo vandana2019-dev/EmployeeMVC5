@@ -27,7 +27,7 @@
         $(document).ready(function () {
 
 
-            $("#employees").DataTable({
+        var table =   $("#employees").DataTable({
                 ajax: {
                     url: "/api/employees",
                     dataSrc: ""
@@ -68,7 +68,8 @@
                             method: "DELETE",
                             success: function () {
                                 console.log("Success");
-                                button.parents("tr").remove();
+                                table.row(button.parents("tr")).remove().draw();
+                          
                             }
                         });
                     }
